@@ -1,4 +1,13 @@
 # functional-scss-lite
+
+<a href="https:/unpkg.com/functional-scss-lite/dist/functional-scss-lite.min.css"><img
+  src="http://img.badgesize.io/https:/unpkg.com/functional-scss-lite/dist/functional-scss-lite.min.css?compression=gzip&style=flat-square"
+  alt="Gzip Size">
+</a>
+
+<a href="https://github.com/OrekiSH/functional-scss-lite/blob/main/LICENSE"><img
+  src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
+
 Lite CSS Functional/Utility/Atomic CSS library(2kB gzip)
 
 ### layout

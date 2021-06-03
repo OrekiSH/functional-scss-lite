@@ -1,7 +1,8 @@
 {
   "name": "functional-scss-lite",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "dist/functional-scss-lite.min.css",
+  "style": "dist/functional-scss-lite.min.css",
   "license": "MIT",
   "keywords": [
     "atomic css",
@@ -35,7 +36,8 @@
     "build:watch": "gulp build:watch",
     "lint": "stylelint src",
     "lintfix": "stylelint --fix src",
-    "upload:qiniu": "yarn build && node scripts/qiniu"
+    "upload:qiniu": "yarn build && node scripts/qiniu",
+    "prepublishOnly": "npm run build"
   },
   "browserslist": [
     "defaults"
