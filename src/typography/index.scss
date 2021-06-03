@@ -1,0 +1,72 @@
+// style
+.italic { font-style: italic; }
+.regular { font-style: normal; }
+
+// decoration
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+.underline-none { text-decoration: none; }
+
+// weight
+$weightList: 0, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+@each $weight in $weightList {
+  .font-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+// text align
+$textAlignList: left, right, center, justify;
+
+@each $textAlign in $textAlignList {
+  .text-#{$textAlign} {
+    text-align: $textAlign;
+
+    @if ($textAlign == justify) {
+      text-align-last: justify;
+    }
+  }
+}
+
+// whitespace
+$whitespaceList: nowrap, pre, pre-line, pre-wrap;
+
+@each $whitespace in $whitespaceList {
+  .#{$whitespace} {
+    white-space: $whitespace;
+  }
+}
+
+// truncate
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.truncate-line {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+$truncateLineList: 2, 3, 4, 5;
+
+@each $truncateLine in $truncateLineList {
+  .truncate-#{$truncateLine} {
+    @extend .truncate-line;
+
+    -webkit-line-clamp: $truncateLine;
+  }
+}
+
+// vertical align
+$alignList: baseline, top, middle, bottom, text-top, text-bottom;
+
+@each $align in $alignList {
+  .align-#{$align} {
+    vertical-align: $align;
+  }
+}

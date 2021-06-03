@@ -1,0 +1,17 @@
+$radiusMap: ("sm": 1px, "md": 2px, "lg": 4px, "xl": 8px);
+
+@each $size, $radius in $radiusMap {
+  .rounded-#{$size} {
+    border-radius: $radius;
+  }
+}
+
+.circle { border-radius: 50%; }
+
+.border-0 { border-width: 0; }
+
+$styleList: none, dashed, dotted;
+
+@each $style in $styleList {
+  .border-#{$style} { border-style: $style; }
+}

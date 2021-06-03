@@ -1,0 +1,17 @@
+$sizes: 0, 8, 10, 16, 20, 24;
+
+@each $size in $sizes {
+  .m-#{$size} { margin: #{$size}px; }
+  .mt-#{$size} { margin-top: #{$size}px; }
+  .mr-#{$size} { margin-right: #{$size}px; }
+  .mb-#{$size} { margin-bottom: #{$size}px; }
+  .ml-#{$size} { margin-left: #{$size}px; }
+  .mx-#{$size} {
+    @extend .ml-#{$size};
+    @extend .mr-#{$size};
+  }
+  .my-#{$size} {
+    @extend .mt-#{$size};
+    @extend .mb-#{$size};
+  }
+}

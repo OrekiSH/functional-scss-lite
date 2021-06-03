@@ -1,0 +1,15 @@
+$selectList: none, text, all, auto;
+
+@each $select in $selectList {
+  .select-#{$select} {
+    user-select: $select;
+  }
+}
+
+$cursorList: auto, default, pointer, wait, text, move, help, not-allowed;
+
+@each $cursor in $cursorList {
+  .cursor-#{$cursor} {
+    cursor: $cursor;
+  }
+}

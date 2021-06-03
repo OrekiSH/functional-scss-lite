@@ -1,0 +1,17 @@
+$sizes: 0, 8, 10, 16, 20, 24;
+
+@each $size in $sizes {
+  .p-#{$size} { padding: #{$size}px; }
+  .pt-#{$size} { padding-top: #{$size}px; }
+  .pr-#{$size} { padding-right: #{$size}px; }
+  .pb-#{$size} { padding-bottom: #{$size}px; }
+  .pl-#{$size} { padding-left: #{$size}px; }
+  .px-#{$size} {
+    @extend .pl-#{$size};
+    @extend .pr-#{$size};
+  }
+  .py-#{$size} {
+    @extend .pt-#{$size};
+    @extend .pb-#{$size};
+  }
+}

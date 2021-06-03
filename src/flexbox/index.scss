@@ -1,0 +1,82 @@
+$flexList: flex, inline-flex;
+
+@each $flex in $flexList {
+  .#{$flex} { display: $flex; }
+}
+
+// direction
+.flex-row {
+  @extend .flex;
+
+  flex-direction: row;
+}
+
+.flex-col {
+  @extend .flex;
+
+  flex-direction: column;
+}
+
+.flex-row-reverse {
+  @extend .flex;
+
+  flex-direction: row-reverse;
+}
+
+.flex-col-reverse {
+  @extend .flex;
+
+  flex-direction: column-reverse;
+}
+
+// wrap
+$wrapList: wrap, wrap-reverse, nowrap;
+
+@each $wrap in $wrapList {
+  .flex-#{$wrap} {
+    @extend .flex;
+
+    flex-wrap: $wrap;
+  }
+}
+
+// justify
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+.justify-normal { justify-content: normal; }
+
+// items
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.items-center { align-items: center; }
+.items-baseline { align-items: baseline; }
+.items-stretch { align-items: stretch; }
+.items-normal { align-items: normal; }
+
+// justify + items
+$alignXList: start, end, center, between, around, evenly;
+$alignYList: start, end, center;
+
+@each $alignX in $alignXList {
+  @each $alignY in $alignYList {
+    @if ($alignX != $alignY) {
+      .flex-#{$alignX}-#{$alignY} {
+        @extend .flex;
+        @extend .justify-#{$alignX};
+        @extend .items-#{$alignY};
+      }
+    }
+
+    @else {
+      .flex-#{$alignX} {
+        @extend .flex;
+        @extend .justify-#{$alignX};
+        @extend .items-#{$alignX};
+      }
+    }
+  }
+}
